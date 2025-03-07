@@ -11,8 +11,7 @@ public class Item
 public class LevelManager : MonoBehaviour
 {
 	public static LevelManager instance;
-	public List<Item> items;
-	
+	public List<Item> items;	
 
 	private void Awake()
 	{
