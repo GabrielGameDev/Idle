@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 11400000, guid: 9df33b0f0b51d5649afe8cbf2a5188a3, type: 2}
-  interval: 1
+  interval: 0.1
 --- !u!65 &327506543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -787,8 +787,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cce3e39fcfa9634098c81177b17e245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseAmout: 1.1
-  resources: []
+  increaseAmout: 1.5
+  resources:
+  - resource: {fileID: 11400000, guid: 9df33b0f0b51d5649afe8cbf2a5188a3, type: 2}
+    amount: 10
+  - resource: {fileID: 11400000, guid: 5134349965860914fa9dce3258330a05, type: 2}
+    amount: 10
   towerTop: {fileID: 477094893}
   towerPart: {fileID: 1013036709}
 --- !u!4 &595119756
@@ -1221,7 +1225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 11400000, guid: 5134349965860914fa9dce3258330a05, type: 2}
-  interval: 1
+  interval: 0.1
 --- !u!65 &1578009881
 BoxCollider:
   m_ObjectHideFlags: 0

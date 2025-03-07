@@ -37,8 +37,21 @@ public class Tower : MonoBehaviour
         }
 
         Debug.Log("Adiciona uma parte");
+		foreach (var item in resources)
+		{
+			if (levelItems.ContainsKey(item.resource))
+			{				
+				LevelManager.instance.items
+					.First(i => i.resource == item.resource)
+					.amount -= item.amount;
 
-        
-    }
+				Debug.Log("Gastou " + item.amount + " de " + item.resource);
+                item.amount = Mathf.RoundToInt(item.amount * increaseAmout);
+			}
+		}
+
+
+
+	}
 
 }
