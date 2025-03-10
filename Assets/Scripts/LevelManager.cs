@@ -11,20 +11,33 @@ public class Item
 public class LevelManager : MonoBehaviour
 {
 	public static LevelManager instance;
-	public List<Item> items;	
+	public List<Item> items;
+	public GameObject uiPanel;
+	public Transform itemsPanel;
+	public UiItem uiItemPrefab;
+	public List<UiItem> uiItems;
 
 	private void Awake()
 	{
 		instance = this;
 	}
 
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.I))
+		{
+			uiPanel.SetActive(!uiPanel.activeSelf);
+		}
+	}
+
 	public void AddResource(Resource resource)
-	{		
+	{
 		foreach (var item in items)
 		{
 			if (item.resource == resource)
 			{
 				item.amount += 1;
+				uiItems.Find(uiItem => uiItem.resource == resource).UpdateAmount(item.amount);
 				return;
 			}
 		}
@@ -36,6 +49,22 @@ public class LevelManager : MonoBehaviour
 		};
 
 		items.Add(newItem);
+		UiItem uiItem = Instantiate(uiItemPrefab, itemsPanel);
+		uiItem.AddItem(resource, 1);
+		uiItems.Add(uiItem);
 
+	}
+
+	public void RemoveResource(Resource resource, int amount)
+	{
+		foreach (var item in items)
+		{
+			if (item.resource == resource)
+			{
+				item.amount -= amount;
+				uiItems.Find(uiItem => uiItem.resource == resource).UpdateAmount(item.amount);
+				return;
+			}
+		}
 	}
 }

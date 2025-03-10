@@ -14,14 +14,14 @@ public class Tower : MonoBehaviour
 
     public List<GameObject> towerParts;
 
-	private void Awake()
-	{
-		instance = this;
-	}
-
-	public void AddTowerPart()
+    private void Awake()
     {
-        if(LevelManager.instance.items == null || LevelManager.instance.items.Count == 0)
+        instance = this;
+    }
+
+    public void AddTowerPart()
+    {
+        if (LevelManager.instance.items == null || LevelManager.instance.items.Count == 0)
         {
             Debug.Log("Sem itens");
             return;
@@ -31,26 +31,28 @@ public class Tower : MonoBehaviour
 
         foreach (var item in resources)
         {
-            if(!levelItems.ContainsKey(item.resource) || item.amount > levelItems[item.resource]) 
+            if (!levelItems.ContainsKey(item.resource) || item.amount > levelItems[item.resource])
             {
-                Debug.Log("Não tem recursos");
+                Debug.Log("NÃ£o tem recursos");
                 return;
             }
         }
 
         Debug.Log("Adiciona uma parte");
-		foreach (var item in resources)
-		{
-			if (levelItems.ContainsKey(item.resource))
-			{				
-				LevelManager.instance.items
-					.First(i => i.resource == item.resource)
-					.amount -= item.amount;
+        foreach (var item in resources)
+        {
+            if (levelItems.ContainsKey(item.resource))
+            {
+                // LevelManager.instance.items
+                //     .First(i => i.resource == item.resource)
+                //     .amount -= item.amount;
 
-				Debug.Log("Gastou " + item.amount + " de " + item.resource);
+                LevelManager.instance.RemoveResource(item.resource, item.amount);
+
+                Debug.Log("Gastou " + item.amount + " de " + item.resource);
                 item.amount = Mathf.RoundToInt(item.amount * increaseAmout);
-			}
-		}
+            }
+        }
 
         GameObject lastPart = towerParts[towerParts.Count - 1];
 
@@ -59,6 +61,6 @@ public class Tower : MonoBehaviour
 
         towerParts.Add(newPart);
 
-	}
+    }
 
 }
