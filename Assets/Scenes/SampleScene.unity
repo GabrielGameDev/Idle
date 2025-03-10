@@ -790,11 +790,13 @@ MonoBehaviour:
   increaseAmout: 1.5
   resources:
   - resource: {fileID: 11400000, guid: 9df33b0f0b51d5649afe8cbf2a5188a3, type: 2}
-    amount: 10
+    amount: 1
   - resource: {fileID: 11400000, guid: 5134349965860914fa9dce3258330a05, type: 2}
-    amount: 10
+    amount: 1
   towerTop: {fileID: 477094893}
   towerPart: {fileID: 1013036709}
+  towerParts:
+  - {fileID: 1013036709}
 --- !u!4 &595119756
 Transform:
   m_ObjectHideFlags: 0

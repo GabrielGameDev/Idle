@@ -12,6 +12,8 @@ public class Tower : MonoBehaviour
     public Transform towerTop;
     public GameObject towerPart;
 
+    public List<GameObject> towerParts;
+
 	private void Awake()
 	{
 		instance = this;
@@ -50,7 +52,12 @@ public class Tower : MonoBehaviour
 			}
 		}
 
+        GameObject lastPart = towerParts[towerParts.Count - 1];
 
+        GameObject newPart = Instantiate(towerPart, lastPart.transform.position + Vector3.up, Quaternion.identity);
+        towerTop.position += Vector3.up;
+
+        towerParts.Add(newPart);
 
 	}
 
