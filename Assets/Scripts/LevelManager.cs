@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -66,5 +67,42 @@ public class LevelManager : MonoBehaviour
 				return;
 			}
 		}
+	}
+
+	public bool CanBuy(List<Item> resources, float increaseAmout)
+	{
+		if (items == null || items.Count == 0)
+		{
+			Debug.Log("Sem itens");
+			return false;
+		}
+
+		Dictionary<Resource, int> levelItems = LevelManager.instance.items.ToDictionary(item => item.resource, item => item.amount);
+
+		foreach (var item in resources)
+		{
+			if (!levelItems.ContainsKey(item.resource) || item.amount > levelItems[item.resource])
+			{
+				Debug.Log("Não tem recursos");
+				return false;
+			}
+		}
+
+		Debug.Log("Remove os recursos");
+		foreach (var item in resources)
+		{
+			if (levelItems.ContainsKey(item.resource))
+			{
+				// LevelManager.instance.items
+				//     .First(i => i.resource == item.resource)
+				//     .amount -= item.amount;
+
+				RemoveResource(item.resource, item.amount);
+
+				Debug.Log("Gastou " + item.amount + " de " + item.resource);
+				item.amount = Mathf.RoundToInt(item.amount * increaseAmout);
+			}
+		}
+		return true;
 	}
 }
