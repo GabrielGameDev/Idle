@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class CollectArea : MonoBehaviour
 {
-    public Resource resource;
+	public Resource resource;
 
-    public float interval = 1f;
+	public float interval = 1f;
 	bool cliked;
 	float timer;
 
@@ -24,6 +24,16 @@ public class CollectArea : MonoBehaviour
 		{
 			timer = 0f;
 		}
+	}
+
+	void OnMouseEnter()
+	{
+		Cursor.SetCursor(LevelManager.instance.interactCursor, Vector2.zero, CursorMode.Auto);
+	}
+
+	void OnMouseExit()
+	{
+		Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 	}
 
 	private void OnMouseDown()

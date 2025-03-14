@@ -12,6 +12,7 @@ public class Item
 public class LevelManager : MonoBehaviour
 {
 	public static LevelManager instance;
+	public Texture2D interactCursor;
 	public List<Item> items;
 	public GameObject uiPanel;
 	public Transform itemsPanel;

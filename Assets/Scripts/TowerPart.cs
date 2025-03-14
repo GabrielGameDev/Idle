@@ -7,4 +7,14 @@ public class TowerPart : MonoBehaviour
 	{
 		Tower.instance.AddTowerPart();
 	}
+
+	void OnMouseEnter()
+	{
+		Cursor.SetCursor(LevelManager.instance.interactCursor, Vector2.zero, CursorMode.Auto);
+	}
+
+	void OnMouseExit()
+	{
+		Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+	}
 }

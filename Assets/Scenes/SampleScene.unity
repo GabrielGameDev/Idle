@@ -1637,6 +1637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45ad89968f71b64594b72527c43cca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactCursor: {fileID: 21300000, guid: 8c08228bb0671bf45aaeefb25274f820, type: 3}
   items: []
   uiPanel: {fileID: 132203806}
   itemsPanel: {fileID: 622389907}

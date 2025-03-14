@@ -21,4 +21,14 @@ public class Shop : MonoBehaviour
     {
         Buy();
     }
+
+    void OnMouseEnter()
+    {
+        Cursor.SetCursor(LevelManager.instance.interactCursor, Vector2.zero, CursorMode.Auto);
+    }
+
+    void OnMouseExit()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
 }
