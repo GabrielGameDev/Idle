@@ -14,6 +14,8 @@ public class Shop : MonoBehaviour
         {
             CharacterMiner newMiner = Instantiate(miner, transform.position, Quaternion.identity);
             newMiner.destinationPoint = destinationPoint;
+            SetInfoText();
+
         }
     }
 
@@ -25,10 +27,22 @@ public class Shop : MonoBehaviour
     void OnMouseEnter()
     {
         Cursor.SetCursor(LevelManager.instance.interactCursor, Vector2.zero, CursorMode.Auto);
+        SetInfoText();
+    }
+
+    private void SetInfoText()
+    {
+        string costText = "";
+        foreach (var item in resources)
+        {
+            costText += item.amount + " " + item.resource.name + " ";
+        }
+        LevelManager.instance.infoText.text = "Comprar coletador por " + costText;
     }
 
     void OnMouseExit()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        LevelManager.instance.infoText.text = "";
     }
 }

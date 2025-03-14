@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 [System.Serializable]
@@ -13,6 +14,7 @@ public class LevelManager : MonoBehaviour
 {
 	public static LevelManager instance;
 	public Texture2D interactCursor;
+	public TMP_Text infoText;
 	public List<Item> items;
 	public GameObject uiPanel;
 	public Transform itemsPanel;
@@ -74,7 +76,8 @@ public class LevelManager : MonoBehaviour
 	{
 		if (items == null || items.Count == 0)
 		{
-			Debug.Log("Sem itens");
+
+			infoText.text = "Sem itens";
 			return false;
 		}
 
@@ -84,7 +87,8 @@ public class LevelManager : MonoBehaviour
 		{
 			if (!levelItems.ContainsKey(item.resource) || item.amount > levelItems[item.resource])
 			{
-				Debug.Log("Não tem recursos");
+
+				infoText.text = "Não tem recursos";
 				return false;
 			}
 		}
@@ -106,4 +110,6 @@ public class LevelManager : MonoBehaviour
 		}
 		return true;
 	}
+
+
 }

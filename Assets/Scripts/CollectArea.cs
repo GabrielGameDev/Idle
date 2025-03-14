@@ -29,11 +29,13 @@ public class CollectArea : MonoBehaviour
 	void OnMouseEnter()
 	{
 		Cursor.SetCursor(LevelManager.instance.interactCursor, Vector2.zero, CursorMode.Auto);
+		LevelManager.instance.infoText.text = "Segure botão esquerdo para coletar " + resource.name;
 	}
 
 	void OnMouseExit()
 	{
 		Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+		LevelManager.instance.infoText.text = "";
 	}
 
 	private void OnMouseDown()
