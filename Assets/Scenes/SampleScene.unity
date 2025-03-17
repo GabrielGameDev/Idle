@@ -523,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resource: {fileID: 11400000, guid: 9df33b0f0b51d5649afe8cbf2a5188a3, type: 2}
   interval: 1
+  amount: 1
 --- !u!65 &327506543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2630,6 +2631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resource: {fileID: 11400000, guid: 5134349965860914fa9dce3258330a05, type: 2}
   interval: 1
+  amount: 1
 --- !u!65 &1578009881
 BoxCollider:
   m_ObjectHideFlags: 0

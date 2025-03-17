@@ -34,13 +34,13 @@ public class LevelManager : MonoBehaviour
 		}
 	}
 
-	public void AddResource(Resource resource)
+	public void AddResource(Resource resource, int amount)
 	{
 		foreach (var item in items)
 		{
 			if (item.resource == resource)
 			{
-				item.amount += 1;
+				item.amount += amount;
 				uiItems.Find(uiItem => uiItem.resource == resource).UpdateAmount(item.amount);
 				return;
 			}
@@ -49,12 +49,12 @@ public class LevelManager : MonoBehaviour
 		Item newItem = new Item()
 		{
 			resource = resource,
-			amount = 1
+			amount = amount
 		};
 
 		items.Add(newItem);
 		UiItem uiItem = Instantiate(uiItemPrefab, itemsPanel);
-		uiItem.AddItem(resource, 1);
+		uiItem.AddItem(resource, amount);
 		uiItems.Add(uiItem);
 
 	}

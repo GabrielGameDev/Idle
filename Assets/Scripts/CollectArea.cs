@@ -5,6 +5,7 @@ public class CollectArea : MonoBehaviour
 	public Resource resource;
 
 	public float interval = 1f;
+	public int amount = 1;
 	bool cliked;
 	float timer;
 
@@ -17,12 +18,26 @@ public class CollectArea : MonoBehaviour
 			if (timer > interval)
 			{
 				timer = 0f;
-				LevelManager.instance.AddResource(resource);
+				LevelManager.instance.AddResource(resource, amount);
 			}
 		}
 		else
 		{
 			timer = 0f;
+		}
+	}
+
+	public void UpgradeAmount()
+	{
+		amount++;
+	}
+
+	public void UpgradeInterval()
+	{
+		interval -= 0.1f;
+		if (interval < 0.1f)
+		{
+			interval = 0.1f;
 		}
 	}
 

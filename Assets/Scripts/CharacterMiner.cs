@@ -24,7 +24,7 @@ public class CharacterMiner : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= collectArea.interval)
             {
-                LevelManager.instance.AddResource(collectArea.resource);
+                LevelManager.instance.AddResource(collectArea.resource, collectArea.amount);
                 timer = 0;
 
             }
