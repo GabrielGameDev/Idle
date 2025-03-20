@@ -1302,6 +1302,7 @@ GameObject:
   - component: {fileID: 689245100}
   - component: {fileID: 689245099}
   - component: {fileID: 689245098}
+  - component: {fileID: 689245101}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1372,7 +1373,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 689245099}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 689245101}
+        m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &689245099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1411,6 +1424,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689245096}
   m_CullTransparentMesh: 1
+--- !u!114 &689245101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689245096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5228a320ee6714f80605bfdafede0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectArea: {fileID: 327506542}
+  upgradeType: 1
+  resourcesCost:
+  - resource: {fileID: 11400000, guid: 9df33b0f0b51d5649afe8cbf2a5188a3, type: 2}
+    amount: 10
+  increaseAmount: 1.5
 --- !u!1 &771410457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,7 +1499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade 3
+  m_text: Wood Eficiency Level 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1495,11 +1526,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 19.05
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 2
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -2046,6 +2077,7 @@ GameObject:
   - component: {fileID: 1080612376}
   - component: {fileID: 1080612375}
   - component: {fileID: 1080612374}
+  - component: {fileID: 1080612377}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2116,7 +2148,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1080612375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1080612377}
+        m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1080612375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2155,6 +2199,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080612372}
   m_CullTransparentMesh: 1
+--- !u!114 &1080612377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080612372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5228a320ee6714f80605bfdafede0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectArea: {fileID: 327506542}
+  upgradeType: 0
+  resourcesCost:
+  - resource: {fileID: 11400000, guid: 9df33b0f0b51d5649afe8cbf2a5188a3, type: 2}
+    amount: 10
+  increaseAmount: 1.5
 --- !u!1 &1113767717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,7 +2325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade 1
+  m_text: Stone Eficiency Level 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2290,11 +2352,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 19.15
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 2
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -2354,6 +2416,7 @@ GameObject:
   - component: {fileID: 1193919703}
   - component: {fileID: 1193919702}
   - component: {fileID: 1193919701}
+  - component: {fileID: 1193919704}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -2424,7 +2487,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1193919702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1193919704}
+        m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1193919702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,6 +2538,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193919699}
   m_CullTransparentMesh: 1
+--- !u!114 &1193919704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193919699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5228a320ee6714f80605bfdafede0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectArea: {fileID: 1578009880}
+  upgradeType: 0
+  resourcesCost:
+  - resource: {fileID: 11400000, guid: 5134349965860914fa9dce3258330a05, type: 2}
+    amount: 10
+  increaseAmount: 1.5
 --- !u!1 &1220354854
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,6 +2790,7 @@ GameObject:
   - component: {fileID: 1609565706}
   - component: {fileID: 1609565705}
   - component: {fileID: 1609565704}
+  - component: {fileID: 1609565707}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -2767,7 +2861,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1609565705}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1609565707}
+        m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1609565705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2806,6 +2912,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609565702}
   m_CullTransparentMesh: 1
+--- !u!114 &1609565707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609565702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5228a320ee6714f80605bfdafede0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectArea: {fileID: 1578009880}
+  upgradeType: 1
+  resourcesCost:
+  - resource: {fileID: 11400000, guid: 5134349965860914fa9dce3258330a05, type: 2}
+    amount: 10
+  increaseAmount: 1.5
 --- !u!1001 &1753080346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2928,7 +3052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade 4
+  m_text: Wood Interval Level 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2955,11 +3079,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 21.2
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 2
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -3064,7 +3188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade 2
+  m_text: Stone Interval Level 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3091,11 +3215,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 21.3
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 2
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
