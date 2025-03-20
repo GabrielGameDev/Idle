@@ -6,8 +6,13 @@ public class CollectArea : MonoBehaviour
 
 	public float interval = 1f;
 	public int amount = 1;
+	public AudioClip collectSound;
 	bool cliked;
 	float timer;
+
+
+
+
 
 
 	private void Update()
@@ -17,6 +22,7 @@ public class CollectArea : MonoBehaviour
 			timer += Time.deltaTime;
 			if (timer > interval)
 			{
+				PlayCollectSound();
 				timer = 0f;
 				LevelManager.instance.AddResource(resource, amount);
 			}
@@ -41,10 +47,15 @@ public class CollectArea : MonoBehaviour
 		}
 	}
 
+	public void PlayCollectSound()
+	{
+		LevelManager.instance.PlaySound(collectSound);
+	}
+
 	void OnMouseEnter()
 	{
 		Cursor.SetCursor(LevelManager.instance.interactCursor, Vector2.zero, CursorMode.Auto);
-		LevelManager.instance.infoText.text = "Segure botão esquerdo para coletar " + resource.name;
+		LevelManager.instance.SetInfoText("Segure botão esquerdo para coletar " + resource.name);
 	}
 
 	void OnMouseExit()

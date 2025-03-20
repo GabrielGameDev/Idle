@@ -21,9 +21,15 @@ public class LevelManager : MonoBehaviour
 	public UiItem uiItemPrefab;
 	public List<UiItem> uiItems;
 
+	public AudioClip buySound;
+	public AudioClip hoverSound;
+
+	AudioSource audioSource;
+
 	private void Awake()
 	{
 		instance = this;
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	void Update()
@@ -108,8 +114,24 @@ public class LevelManager : MonoBehaviour
 				item.amount = Mathf.RoundToInt(item.amount * increaseAmout);
 			}
 		}
+		audioSource.PlayOneShot(buySound);
 		return true;
 	}
 
+	public void SetInfoText(string text)
+	{
+		audioSource.PlayOneShot(hoverSound);
+		infoText.text = text;
+	}
+
+	public void PlaySound(AudioClip clip)
+	{
+		if (audioSource.isPlaying)
+		{
+			return;
+		}
+		audioSource.clip = clip;
+		audioSource.Play();
+	}
 
 }

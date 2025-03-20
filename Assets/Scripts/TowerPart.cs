@@ -23,7 +23,7 @@ public class TowerPart : MonoBehaviour
 		{
 			costText += item.amount + " " + item.resource.name + " ";
 		}
-		LevelManager.instance.infoText.text = "Clique para adicionar parte da torre por " + costText;
+		LevelManager.instance.SetInfoText("Clique para adicionar parte da torre por " + costText);
 	}
 
 	void OnMouseExit()

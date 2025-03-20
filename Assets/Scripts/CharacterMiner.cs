@@ -26,7 +26,7 @@ public class CharacterMiner : MonoBehaviour
             {
                 LevelManager.instance.AddResource(collectArea.resource, collectArea.amount);
                 timer = 0;
-
+                collectArea.PlayCollectSound();
             }
 
         }

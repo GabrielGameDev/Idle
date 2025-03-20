@@ -37,7 +37,7 @@ public class Shop : MonoBehaviour
         {
             costText += item.amount + " " + item.resource.name + " ";
         }
-        LevelManager.instance.infoText.text = "Comprar coletador por " + costText;
+        LevelManager.instance.SetInfoText("Comprar coletador por " + costText);
     }
 
     void OnMouseExit()
