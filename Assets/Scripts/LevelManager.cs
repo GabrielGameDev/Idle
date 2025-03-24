@@ -87,7 +87,7 @@ public class LevelManager : MonoBehaviour
 			return false;
 		}
 
-		Dictionary<Resource, int> levelItems = LevelManager.instance.items.ToDictionary(item => item.resource, item => item.amount);
+		Dictionary<Resource, int> levelItems = items.ToDictionary(item => item.resource, item => item.amount);
 
 		foreach (var item in resources)
 		{

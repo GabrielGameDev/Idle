@@ -37,6 +37,13 @@ public class UpgradeButton : MonoBehaviour
     }
     public void Upgrade()
     {
+        if (upgradeType == UpgradeType.Interval)
+        {
+            if (collectArea.interval <= 0.1f)
+            {
+                return;
+            }
+        }
         if (LevelManager.instance.CanBuy(resourcesCost, increaseAmount))
         {
             level++;
